@@ -13,8 +13,7 @@
 		margin: 40px;
 	}
 	input {
-		height: 40px;
-		width: 200px;
+		width: 300px;
 		-webkit-appearance: none;
 		background-color: #fff;
 		background-image: none;
@@ -23,9 +22,9 @@
 		box-sizing: border-box;
 		color: #606266;
 		display: inline-block;
-		font-size: inherit;
-		height: 40px;
-		line-height: 40px;
+		font-size: 40px;
+		height: 80px;
+		line-height: 80px;
 		outline: none;
 		padding: 0 15px;
 		transition: border-color .2s cubic-bezier(.645,.045,.355,1);
@@ -60,14 +59,14 @@
 	}
 	
 	img {
-		max-width: 100%;
+	   width: 100%;
 	}
    </style>
 </head>
  <body>
     <div><stong>1、等分系数表计算</stong></div>
     <div > <label>圆直径</label> <input id="diameter" name="diameter" /></div>
-	<div ><label>正n边形，n的数量</label> <input id="number" name="number" /></div>
+	<div ><label>正n边形，n的数量(n>=3)</label> <input id="number" name="number" /></div>
 	<div ><button onclick="handle()">计算</button></div>
 	<div id="result"></div>
 	
@@ -77,9 +76,10 @@
 	    function handle () {
 			var diameter = document.querySelector("#diameter").value
 			var number = document.querySelector("#number").value
+			if(number<3&&!diameter) return;
 			var resultEl = document.querySelector("#result")
 			var result = diameter * Math.sin(Math.PI/ number);
-			resultEl.innerText = result;
+			resultEl.innerText = "正" + number + "的边长为：" + result;
 		}
 	</script>
  </body>
