@@ -1,0 +1,86 @@
+<! DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>常用工具使用</title>
+   <style>
+   
+	body {
+	  padding: 40px;
+	  font-size: 40px;
+	}
+	div {
+		margin: 40px;
+	}
+	input {
+		height: 40px;
+		width: 200px;
+		-webkit-appearance: none;
+		background-color: #fff;
+		background-image: none;
+		border-radius: 4px;
+		border: 1px solid #dcdfe6;
+		box-sizing: border-box;
+		color: #606266;
+		display: inline-block;
+		font-size: inherit;
+		height: 40px;
+		line-height: 40px;
+		outline: none;
+		padding: 0 15px;
+		transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+	}
+	button {
+		    display: inline-block;
+			line-height: 1;
+			white-space: nowrap;
+			cursor: pointer;
+			background: #fff;
+			border: 1px solid #dcdfe6;
+			color: #606266;
+			-webkit-appearance: none;
+			text-align: center;
+			box-sizing: border-box;
+			outline: none;
+			margin: 0;
+			transition: .1s;
+			font-weight: 500;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			padding: 12px 20px;
+			font-size: 40px;
+			border-radius: 4px;
+			background-color: #409eff;
+			border-color: #409eff;
+			color: #fff;
+	}
+	#result {
+		color: red;
+	}
+	
+	img {
+		max-width: 100%;
+	}
+   </style>
+</head>
+ <body>
+    <div><stong>1、等分系数表计算</stong></div>
+    <div > <label>圆直径</label> <input id="diameter" name="diameter" /></div>
+	<div ><label>正n边形，n的数量</label> <input id="number" name="number" /></div>
+	<div ><button onclick="handle()">计算</button></div>
+	<div id="result"></div>
+	
+	<div><stong>2、圆直径为1的等分系数表</stong></div>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603219399244&di=b11b8c004685420bf9ee01769a79b4a8&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fe61190ef76c6a7efc71de65df5faaf51f3de6695.jpg"/>
+	<script>
+	    function handle () {
+			var diameter = document.querySelector("#diameter").value
+			var number = document.querySelector("#number").value
+			var resultEl = document.querySelector("#result")
+			var result = diameter * Math.sin(Math.PI/ number);
+			resultEl.innerText = result;
+		}
+	</script>
+ </body>
+</html>
